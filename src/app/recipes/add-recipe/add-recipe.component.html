@@ -1,0 +1,19 @@
+<h1>Add a new recipe</h1>
+
+<div>
+    <form class='example-container' [formGroup]="form">
+        <mat-form-field>
+            <input matInput placeholder="Name" name="name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Picture" name="picture" formControlName="picture">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Description" name="description" formControlName="description">
+        </mat-form-field>
+        <button mat-icon-button type="submit" aria-label="Add button" (click)="onSubmit()" [disabled]="!form.valid">
+            <mat-icon>add</mat-icon>
+        </button>
+    </form>
+
+</div>

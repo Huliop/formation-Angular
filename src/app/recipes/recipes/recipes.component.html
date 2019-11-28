@@ -1,0 +1,23 @@
+<table mat-table [dataSource]="recipes">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let recipe">{{recipe.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let recipe">{{recipe.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let recipe">
+            <button mat-icon-button type="submit" aria-label="Delete button" (click)="onSubmit(recipe.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'description', 'id']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'description', 'id']"></tr>
+</table>

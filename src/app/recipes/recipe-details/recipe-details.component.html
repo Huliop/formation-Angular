@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle>By Poiluh</mat-card-subtitle>
+    </mat-card-header>
+    <button (click)="toggle()">transi</button>
+    <img mat-card-image [@translate]="button ? 'init' : 'transit'" src="{{ recipe.picture }}" alt="Photo of the recipe">
+    <mat-card-content>
+      <p>
+        {{ recipe.description }}
+      </p>
+      <p>
+        {{ recipe.ingredients }}
+      </p>
+      <p>
+        {{ recipe.instructions }}
+      </p>
+    </mat-card-content>
+  </mat-card>
